@@ -1,0 +1,109 @@
+<main class="board-container">
+  <div class="board-row upper-section">
+    <div class="element logo-container">
+      <img class="logo" src="../../assets/logo.svg" alt="" />
+    </div>
+    <button class="element turn-button">
+      <img
+        *ngIf="game.turn"
+        class="turn-icon"
+        src="../../assets/icon-x.svg"
+        alt="icon x"
+      />
+      <img
+        *ngIf="!game.turn"
+        class="turn-icon"
+        src="../../assets/icon-o.svg"
+        alt="icon o"
+      />
+      TURN
+    </button>
+    <div class="element reset-button-container">
+      <button class="reset-button"></button>
+    </div>
+  </div>
+
+  <div>
+    <div class="board-row" *ngFor="let row of game.board; let rowCount = index">
+      <button
+        class="button board-button"
+        *ngFor="let cell of row; let cellCount = index"
+        (click)="gs.play(rowCount, cellCount, game)"
+        [class.icon-x]="cell == 'X'"
+        [class.icon-o]="cell == 'O'"
+        [class.icon-x-outline]="game.turn && cell == ''"
+        [class.icon-o-outline]="!game.turn && cell == ''"
+      >
+        <!-- <img *ngIf="cell==='X'" src="assets/icon-x.svg" alt=""> -->
+        <!-- <img *ngIf="cell==='O'" src="assets/icon-o.svg" alt=""> -->
+      </button>
+    </div>
+  </div>
+
+  <div class="board-row">
+    <div class="score-container element">
+      <p class="score-title">X {{ titleX }}</p>
+      <p class="score-value">{{ game.scoreX }}</p>
+    </div>
+    <div class="score-container element">
+      <p class="score-title">TIES</p>
+      <p class="score-value">{{ game.ties }}</p>
+    </div>
+    <div class="score-container element">
+      <p class="score-title">X {{ titleO }}</p>
+      <p class="score-value">{{ game.scoreO }}</p>
+    </div>
+  </div>
+  <div
+    class="modal"
+    id="winModal"
+    [class.modal-visible]="
+      game.modalConfig.modal == 'WIN' ||
+      game.modalConfig.modal == 'RE' ||
+      game.modalConfig.modal == 'TIE'
+    "
+    [class.modal-invisible]="game.modalConfig.modal == 'OFF'"
+  >
+    <div
+      *ngIf="game.modalConfig.modal == 'WIN' || game.modalConfig.modal == 'TIE'"
+      class="modal-content"
+    >
+      <div class="title">
+        <img
+          src="../../assets/icon-x.svg"
+          alt="icon x"
+          *ngIf="game.modalConfig.winner"
+        />
+        <img
+          src="../../assets/icon-o.svg"
+          alt="icon o"
+          *ngIf="game.modalConfig.winner == false"
+        />
+        <span
+          *ngIf="game.modalConfig.modal == 'WIN'"
+          [class.title-x]="game.modalConfig.winner"
+          [class.title-o]="!game.modalConfig.winner"
+        >
+          TAKES THE ROUND
+        </span>
+        <span class="title-tie" *ngIf="game.modalConfig.modal == 'TIE'">
+          ROUND TIED
+        </span>
+      </div>
+      <div class="button-container">
+        <button
+          class="button helping-button"
+          (click)="gs.gameService.quit(game)"
+        >
+          QUIT
+        </button>
+        <button
+          class="button helping-button"
+          (click)="gs.gameService.nextRound(game)"
+        >
+          NEXT ROUND
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
