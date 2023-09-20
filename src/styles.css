@@ -1,88 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --primary-color: #31c3bd;
-    --primary-color-active: #65e9e4;
-    --primary-color-shadow: #118c87;
-    --primary-color-tone: #31c3bd24;
-    --secondary-color: #f2b137;
-    --secondary-color-active: #ffc860;
-    --secondary-color-shadow: #cc8b13;
-    --secondary-color-tone: #f2b13711;
-    --background-color: #1a2a33;
-    --background-color-active: #1f3641;
-    --background-color-shadow: #10212a;
-    --helping-color: #a8bfc9;
-    --helping-color-active: #dbe8ed;
-    --helping-color-shadow: #6b8997;
-  }
-  
-  html,
-  body {
-    align-items: center;
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    font-family: 'Outfit', sans-serif;
-    min-height: 100vh;
-  }
-  
-  main {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    max-width: 20rem;
-    min-height: 100vh;
-  }
-  
-  button,
-  button:active,
-  button:hover {
-    border: none;
-    outline: none;
-    /* box-shadow: none; */
-  }
-  
-  .button {
-    border-radius: 0.93rem;
-    color: var(--background-color);
-    font-size: 1.2rem;
-    font-weight: bold;
-    height: 4rem;
-    margin-top: 0.4rem;
-    padding: 0.9rem;
-    transition-duration: 0.16s;
-  }
-  
-  .primary-button {
-    background-color: var(--primary-color);
-    box-shadow: 0px -8px 0px 0px var(--primary-color-shadow) inset;
-  }
-  
-  .primary-button:active {
-    background-color: var(--primary-color-active);
-    box-shadow: 0px -8px 0px 0px var(--background-color) inset;
-    transform: translateY(8px);
-  }
-  
-  .secondary-button {
-    background-color: var(--secondary-color);
-    box-shadow: 0px -8px 0px 0px var(--secondary-color-shadow) inset;
-  }
-  
-  .secondary-button:active {
-    background-color: var(--secondary-color-active);
-    box-shadow: 0px -8px 0px 0px var(--background-color) inset;
-    transform: translateY(8px);
-  }
-  
-  .helping-button {
-    background-color: var(--helping-color);
-    box-shadow: 0px -8px 0px 0px var(--helping-color-shadow) inset;
-  }
-  
-  .helping-button:active {
-    background-color: var(--helping-color-active);
-    box-shadow: 0px -8px 0px 0px var(--background-color) inset;
-    transform: translateY(8px);
-  }
+  --primary-color: #31c3bd;
+  --primary-color-active: #65e9e4;
+  --primary-color-shadow: #118c87;
+  --primary-color-tone: #31c3bd24;
+  --secondary-color: #f2b137;
+  --secondary-color-active: #ffc860;
+  --secondary-color-shadow: #cc8b13;
+  --secondary-color-tone: #f2b13711;
+  --background-color: #1a2a33;
+  --background-color-active: #1f3641;
+  --background-color-shadow: #10212a;
+  --helping-color: #a8bfc9;
+  --helping-color-active: #dbe8ed;
+  --helping-color-shadow: #6b8997;
+}
+
+html,
+body {
+  align-items: center;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  max-width: 20rem;
+  min-height: 100vh;
+}
+
+button,
+button:active,
+button:hover {
+  border: none;
+  outline: none;
+  /* box-shadow: none; */
+}
+
+.button {
+  border-radius: 0.93rem;
+  color: var(--background-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 4rem;
+  margin-top: 0.4rem;
+  padding: 0.9rem;
+  transition-duration: 0.16s;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  box-shadow: 0px -8px 0px 0px var(--primary-color-shadow) inset;
+}
+
+.primary-button:active {
+  background-color: var(--primary-color-active);
+  box-shadow: 0px -8px 0px 0px var(--background-color) inset;
+  transform: translateY(8px);
+}
+
+.secondary-button {
+  background-color: var(--secondary-color);
+  box-shadow: 0px -8px 0px 0px var(--secondary-color-shadow) inset;
+}
+
+.secondary-button:active {
+  background-color: var(--secondary-color-active);
+  box-shadow: 0px -8px 0px 0px var(--background-color) inset;
+  transform: translateY(8px);
+}
+
+.helping-button {
+  background-color: var(--helping-color);
+  box-shadow: 0px -8px 0px 0px var(--helping-color-shadow) inset;
+}
+
+.helping-button:active {
+  background-color: var(--helping-color-active);
+  box-shadow: 0px -8px 0px 0px var(--background-color) inset;
+  transform: translateY(8px);
+}

@@ -19,7 +19,11 @@
       TURN
     </button>
     <div class="element reset-button-container">
-      <button class="reset-button"></button>
+      <button
+        class="reset-button"
+        style="cursor: pointer"
+        (click)="gs.gameService.nextRound(game)"
+      ></button>
     </div>
   </div>
 
@@ -33,6 +37,7 @@
         [class.icon-o]="cell == 'O'"
         [class.icon-x-outline]="game.turn && cell == ''"
         [class.icon-o-outline]="!game.turn && cell == ''"
+        style="cursor: pointer"
       >
         <!-- <img *ngIf="cell==='X'" src="assets/icon-x.svg" alt=""> -->
         <!-- <img *ngIf="cell==='O'" src="assets/icon-o.svg" alt=""> -->
@@ -50,7 +55,7 @@
       <p class="score-value">{{ game.ties }}</p>
     </div>
     <div class="score-container element">
-      <p class="score-title">X {{ titleO }}</p>
+      <p class="score-title">O {{ titleO }}</p>
       <p class="score-value">{{ game.scoreO }}</p>
     </div>
   </div>

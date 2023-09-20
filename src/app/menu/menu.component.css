@@ -28,6 +28,7 @@
   justify-content: center;
   margin: auto 0.1rem;
   transition-duration: 0.2s;
+  cursor: pointer;
 }
 
 .button-background-selected {
@@ -45,12 +46,14 @@
   background-color: var(--helping-color);
   mask: url("../../assets/icon-x.svg") no-repeat center;
   mask-size: auto 60%;
+  cursor: pointer;
 }
 
 .icon-o {
   background-color: var(--helping-color);
   mask: url("../../assets/icon-o.svg") no-repeat center;
   mask-size: auto 60%;
+  cursor: pointer;
 }
 
 .icon-selected {

@@ -27,6 +27,14 @@ export class VsService {
     }
 
     game.turn != game.turn;
+
+    // If board is full and there is no winner
+    if (game.count >= 9) {
+      this.gameService.declareTie(game);
+      return;
+    }
+
+    game.turn = !game.turn;
   }
 
   constructor() {}

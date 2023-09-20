@@ -142,7 +142,7 @@ export class GameService {
 
   declareWin(game: any, winner: boolean): void {
     game.modalConfig.modal = 'WIN';
-    game.modalConfig.winner = 'winner';
+    game.modalConfig.winner = winner;
 
     if (winner) game.scoreX++;
     if (!game.turn) game.scoreO++;
