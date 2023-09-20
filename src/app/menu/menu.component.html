@@ -1,0 +1,42 @@
+<main>
+  <img src="../../assets/logo.svg" alt="logo" class="logo" />
+
+  <div class="pick-container">
+    <p class="pick-title">PICK PLAYER 1'S MARK</p>
+
+    <div class="pick-button-container">
+      <!-- <button><img class="icon-x" src="assets/icon-x.svg" alt="X" /></button> -->
+      <!-- <button><img class="icon-o" src="assets/icon-o.svg" alt="O" /></button> -->
+
+      <div
+        class="button-background"
+        [class.button-background-selected]="configService.player == 'X'"
+        (click)="configService.changePlayer(true)"
+      >
+        <button
+          class="icon-x button"
+          [class.icon-selected]="configService.player == 'X'"
+        ></button>
+      </div>
+      <div
+        class="button-background"
+        [class.button-background-selected]="configService.player == 'O'"
+        (click)="configService.changePlayer(false)"
+      >
+        <button
+          class="icon-o button"
+          [class.icon-selected]="configService.player == 'O'"
+        ></button>
+      </div>
+    </div>
+
+    <p class="pick-subtitle">REMEMBER: X GOES FIRST</p>
+  </div>
+
+  <button class="button secondary-button" (click)="this.play(true)">
+    NEW GAME (VS COM)
+  </button>
+  <button class="button primary-button" (click)="this.play(false)">
+    NEW GAME (VS PLAYER)
+  </button>
+</main>

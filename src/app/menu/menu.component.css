@@ -1,0 +1,75 @@
+.logo {
+  height: 2.15rem;
+  width: 4.9rem;
+  margin: 0 auto 2rem auto;
+}
+
+.pick-container {
+  background-color: var(--background-color-active);
+  border-radius: 0.9rem;
+  box-shadow: 0px -8px 0px 0px var(--background-color-shadow) inset;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.pick-button-container {
+  background-color: var(--background-color);
+  border-radius: 0.9rem;
+  display: flex;
+  padding: 0.45rem;
+}
+
+.button-background {
+  align-items: center;
+  border-radius: 0.9rem;
+  flex-grow: 1;
+  justify-content: center;
+  margin: auto 0.1rem;
+  transition-duration: 0.2s;
+}
+
+.button-background-selected {
+  background-color: var(--helping-color);
+}
+
+.button-background button {
+  display: block;
+  flex-grow: 1;
+  width: 50%;
+  margin: 0 auto 0 auto;
+}
+
+.icon-x {
+  background-color: var(--helping-color);
+  mask: url("../../assets/icon-x.svg") no-repeat center;
+  mask-size: auto 60%;
+}
+
+.icon-o {
+  background-color: var(--helping-color);
+  mask: url("../../assets/icon-o.svg") no-repeat center;
+  mask-size: auto 60%;
+}
+
+.icon-selected {
+  background-color: var(--background-color);
+}
+
+.pick-title {
+  color: var(--helping-color);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.pick-subtitle {
+  color: grey;
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 1.4rem;
+}
