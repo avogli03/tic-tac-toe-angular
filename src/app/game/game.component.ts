@@ -32,7 +32,7 @@ export class GameComponent {
       : 'P1';
 
   titleO =
-    this.game.player == 'X'
+    this.game.player == 'O'
       ? 'YOU'
       : this.game.opponent == 'CPU'
       ? 'CPU'
