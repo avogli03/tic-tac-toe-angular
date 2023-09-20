@@ -50,6 +50,11 @@ export class CpuService {
       return;
     }
 
+    if (game.count >= 9) {
+      this.gameService.declareTie(game);
+      return;
+    }
+
     game.turn = !game.turn;
   }
 
