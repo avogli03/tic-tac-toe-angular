@@ -20,21 +20,21 @@ export class GameComponent {
   game = this.gameService.game;
 
   gs: VsService | CpuService =
-    this.configService.opponent == 'CPU'
+    this.configService.opponent == 'COM'
       ? inject(CpuService)
       : inject(VsService);
 
   titleX =
     this.game.player == 'X'
       ? 'YOU'
-      : this.game.opponent == 'CPU'
-      ? 'CPU'
+      : this.game.opponent == 'COM'
+      ? 'COM'
       : 'P1';
 
   titleO =
     this.game.player == 'O'
       ? 'YOU'
-      : this.game.opponent == 'CPU'
-      ? 'CPU'
+      : this.game.opponent == 'COM'
+      ? 'COM'
       : 'P2';
 }

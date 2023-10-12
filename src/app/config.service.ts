@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 })
 export class ConfigService {
   player: 'X' | 'O' = 'X';
-  opponent: 'CPU' | 'VS' | '' = '';
+  opponent: 'COM' | 'VS' | '' = '';
 
   changePlayer(x: boolean): void {
     this.player = x ? 'X' : 'O';

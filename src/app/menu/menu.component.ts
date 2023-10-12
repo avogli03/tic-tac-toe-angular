@@ -20,7 +20,7 @@ export class MenuComponent {
   router: Router = inject(Router);
 
   play(cpu: boolean) {
-    this.configService.opponent = cpu ? 'CPU' : 'VS';
+    this.configService.opponent = cpu ? 'COM' : 'VS';
     this.cpuService.updateVariables();
     this.gameService.createGame();
     setTimeout(() => {

@@ -58,7 +58,7 @@ export class GameService {
     player: this.configService.player,
     opponent: this.configService.opponent,
     turn:
-      this.configService.player == 'O' && this.configService.opponent == 'CPU'
+      this.configService.player == 'O' && this.configService.opponent == 'COM'
         ? false
         : true,
     scoreX: 0,
@@ -70,7 +70,7 @@ export class GameService {
       winner: null,
     },
     count:
-      this.configService.player == 'O' && this.configService.opponent == 'CPU'
+      this.configService.player == 'O' && this.configService.opponent == 'COM'
         ? 1
         : 0,
     board: [
@@ -87,7 +87,7 @@ export class GameService {
       player: this.configService.player,
       opponent: this.configService.opponent,
       turn:
-        this.configService.player == 'O' && this.configService.opponent == 'CPU'
+        this.configService.player == 'O' && this.configService.opponent == 'COM'
           ? false
           : true,
       scoreX: 0,
@@ -99,7 +99,7 @@ export class GameService {
         winner: null,
       },
       count:
-        this.configService.player == 'O' && this.configService.opponent == 'CPU'
+        this.configService.player == 'O' && this.configService.opponent == 'COM'
           ? 1
           : 0,
       board: [
@@ -113,7 +113,7 @@ export class GameService {
 
     if (
       this.configService.player == 'O' &&
-      this.configService.opponent == 'CPU'
+      this.configService.opponent == 'COM'
     ) {
       let randRow = Math.floor(Math.random() * 2);
       let randCol = Math.floor(Math.random() * 2);
@@ -175,7 +175,7 @@ export class GameService {
 
     if (
       this.configService.player == 'O' &&
-      this.configService.opponent == 'CPU'
+      this.configService.opponent == 'COM'
     ) {
       let randRow = Math.floor(Math.random() * 2);
       let randCol = Math.floor(Math.random() * 2);
