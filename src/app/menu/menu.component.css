@@ -44,14 +44,14 @@
 
 .icon-x {
   background-color: var(--helping-color);
-  mask: url("../../assets/icon-x.svg") no-repeat center;
-  mask-size: auto 60%;
+  mask: url("../../assets/icon-x Red.svg") no-repeat center;
+  mask-size: auto 180%;
   cursor: pointer;
 }
 
 .icon-o {
   background-color: var(--helping-color);
-  mask: url("../../assets/icon-o.svg") no-repeat center;
+  mask: url("../../assets/icon-o Blue.svg") no-repeat center;
   mask-size: auto 60%;
   cursor: pointer;
 }

@@ -4,7 +4,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { GameService } from '../game.service';
 import { ConfigService } from '../config.service';
 import { VsService } from '../vs.service';
-import { CpuService } from '../cpu.service';
+import { ComService } from '../com.service';
 
 @Component({
   selector: 'app-game',
@@ -19,9 +19,9 @@ export class GameComponent {
 
   game = this.gameService.game;
 
-  gs: VsService | CpuService =
+  gs: VsService | ComService =
     this.configService.opponent == 'COM'
-      ? inject(CpuService)
+      ? inject(ComService)
       : inject(VsService);
 
   titleX =

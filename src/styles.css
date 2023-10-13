@@ -1,17 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary-color: #31c3bd;
-  --primary-color-active: #65e9e4;
-  --primary-color-shadow: #118c87;
-  --primary-color-tone: #31c3bd24;
-  --secondary-color: #f2b137;
-  --secondary-color-active: #ffc860;
-  --secondary-color-shadow: #cc8b13;
-  --secondary-color-tone: #f2b13711;
+  --primary-color: #d60000;
+  --primary-color-active: #cf6f6f;
+  --primary-color-shadow: #ce8b8b;
+  --primary-color-tone: #946c6224;
+  --secondary-color: #007ac7;
+  --secondary-color-active: #749bb4;
+  --secondary-color-shadow: #a5c2d4;
+  --secondary-color-tone: #4969d411;
   --background-color: #1a2a33;
   --background-color-active: #1f3641;
   --background-color-shadow: #10212a;
-  --helping-color: #a8bfc9;
+  --helping-color: #ced6da;
   --helping-color-active: #dbe8ed;
   --helping-color-shadow: #6b8997;
 }
@@ -61,18 +61,16 @@ button:hover {
 
 .primary-button:active {
   background-color: var(--primary-color-active);
-  box-shadow: 0px -8px 0px 0px var(--background-color) inset;
   transform: translateY(8px);
 }
 
 .secondary-button {
   background-color: var(--secondary-color);
-  box-shadow: 0px -8px 0px 0px var(--secondary-color-shadow) inset;
+  box-shadow: 0px -8px 0px 0px var(--secondary-color-active) inset;
 }
 
 .secondary-button:active {
   background-color: var(--secondary-color-active);
-  box-shadow: 0px -8px 0px 0px var(--background-color) inset;
   transform: translateY(8px);
 }
 

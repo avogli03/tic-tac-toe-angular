@@ -7,13 +7,13 @@
       <img
         *ngIf="game.turn"
         class="turn-icon"
-        src="../../assets/icon-x.svg"
+        src="../../assets/icon-x Red.svg"
         alt="icon x"
       />
       <img
         *ngIf="!game.turn"
         class="turn-icon"
-        src="../../assets/icon-o.svg"
+        src="../../assets/icon-o Blue.svg"
         alt="icon o"
       />
       TURN
@@ -21,7 +21,6 @@
     <div class="element reset-button-container">
       <button
         class="reset-button"
-        style="cursor: pointer"
         (click)="gs.gameService.nextRound(game)"
       ></button>
     </div>
@@ -75,12 +74,12 @@
     >
       <div class="title">
         <img
-          src="../../assets/icon-x.svg"
+          src="../../assets/icon-x Red.svg"
           alt="icon x"
           *ngIf="game.modalConfig.winner"
         />
         <img
-          src="../../assets/icon-o.svg"
+          src="../../assets/icon-o Blue.svg"
           alt="icon o"
           *ngIf="game.modalConfig.winner == false"
         />

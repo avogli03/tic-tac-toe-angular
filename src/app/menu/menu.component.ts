@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ConfigService } from '../config.service';
 import { GameService } from '../game.service';
-import { CpuService } from '../cpu.service';
+import { ComService } from '../com.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,13 +15,13 @@ import { CpuService } from '../cpu.service';
 export class MenuComponent {
   configService: ConfigService = inject(ConfigService);
   gameService: GameService = inject(GameService);
-  cpuService: CpuService = inject(CpuService);
+  comService: ComService = inject(ComService);
   player = this.configService.player;
   router: Router = inject(Router);
 
-  play(cpu: boolean) {
-    this.configService.opponent = cpu ? 'COM' : 'VS';
-    this.cpuService.updateVariables();
+  play(com: boolean) {
+    this.configService.opponent = com ? 'COM' : 'VS';
+    this.comService.updateVariables();
     this.gameService.createGame();
     setTimeout(() => {
       this.router.navigate(['./play']);

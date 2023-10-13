@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
-export class CpuService {
+export class ComService {
   configService: ConfigService = inject(ConfigService);
   gameService: GameService = inject(GameService);
   router: Router = inject(Router);
@@ -14,11 +14,11 @@ export class CpuService {
   game = this.gameService.game;
 
   player: 'X' | 'O' = this.configService.player;
-  cpu: 'X' | 'O' = this.player == 'X' ? 'O' : 'X';
+  com: 'X' | 'O' = this.player == 'X' ? 'O' : 'X';
 
   updateVariables() {
     this.player = this.configService.player;
-    this.cpu = this.player == 'X' ? 'O' : 'X';
+    this.com = this.player == 'X' ? 'O' : 'X';
   }
 
   async play(row: number, col: number, game: any) {
@@ -42,10 +42,10 @@ export class CpuService {
 
     game.turn = !game.turn;
 
-    await this.playCpu(row, col, game);
+    await this.playCom(row, col, game);
     game.count++;
 
-    if (this.gameService.checkWin(this.cpu, game.tests, game.board)) {
+    if (this.gameService.checkWin(this.com, game.tests, game.board)) {
       this.gameService.declareWin(game, game.turn);
       return;
     }
@@ -58,7 +58,7 @@ export class CpuService {
     game.turn = !game.turn;
   }
 
-  async playCpu(row: number, col: number, game: any) {
+  async playCom(row: number, col: number, game: any) {
     await this.sleep(700);
     for (let i = 1; i <= 2; i++) {
       let x = this.evaluate(game, i);
@@ -77,7 +77,7 @@ export class CpuService {
     }
 
     let rand: number = Math.floor(Math.random() * available.length);
-    game.board[available[rand][0]][available[rand][1]] = this.cpu;
+    game.board[available[rand][0]][available[rand][1]] = this.com;
     return;
   }
 
@@ -93,11 +93,11 @@ export class CpuService {
       let cell2: string = game.board[test[1][0]][test[1][1]];
       let cell3: string = game.board[test[2][0]][test[2][1]];
 
-      let valCpu1: number = cell1 == this.cpu ? 1 : 0;
-      let valCpu2: number = cell2 == this.cpu ? 1 : 0;
-      let valCpu3: number = cell3 == this.cpu ? 1 : 0;
+      let valCom1: number = cell1 == this.com ? 1 : 0;
+      let valCom2: number = cell2 == this.com ? 1 : 0;
+      let valCom3: number = cell3 == this.com ? 1 : 0;
 
-      let sumCpu: number = valCpu1 + valCpu2 + valCpu3;
+      let sumCom: number = valCom1 + valCom2 + valCom3;
 
       let valPlayer1: number = cell1 == this.player ? 1 : 0;
       let valPlayer2: number = cell2 == this.player ? 1 : 0;
@@ -107,19 +107,19 @@ export class CpuService {
 
       // let case: number;
 
-      if (stage == 1 && sumCpu == 2 && sumPlayer == 0) {
-        let empty: number = valCpu1 == 0 ? 1 : valCpu2 == 0 ? 2 : 3;
+      if (stage == 1 && sumCom == 2 && sumPlayer == 0) {
+        let empty: number = valCom1 == 0 ? 1 : valCom2 == 0 ? 2 : 3;
         let row: number = test[empty - 1][0];
         let col: number = test[empty - 1][1];
 
-        game.board[row][col] = this.cpu;
+        game.board[row][col] = this.com;
         return true;
-      } else if (stage == 2 && sumPlayer == 2 && sumCpu == 0) {
+      } else if (stage == 2 && sumPlayer == 2 && sumCom == 0) {
         let empty: number = valPlayer1 == 0 ? 1 : valPlayer2 == 0 ? 2 : 3;
         let row: number = test[empty - 1][0];
         let col: number = test[empty - 1][1];
 
-        game.board[row][col] = this.cpu;
+        game.board[row][col] = this.com;
         return true;
       }
     }

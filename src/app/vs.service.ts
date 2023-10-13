@@ -37,5 +37,6 @@ export class VsService {
     game.turn = !game.turn;
   }
 
-  constructor() {}
+  constructor() {
+  }
 }

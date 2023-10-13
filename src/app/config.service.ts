@@ -13,8 +13,8 @@ export class ConfigService {
     console.log(this.player);
   }
 
-  // setOpponent(cpu: boolean): void {
-  //   this.opponent = cpu ? 'CPU' : 'VS';
+  // setOpponent(: boolean): void {
+  //   this.opponent =  ? '' : 'VS';
   //   setTimeout(() => {
   //     this.router.navigate(['/play']);
   //   }, 800);
