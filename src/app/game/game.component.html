@@ -7,13 +7,13 @@
       <img
         *ngIf="game.turn"
         class="turn-icon"
-        src="../../assets/icon-x Red.svg"
+        src="../../assets/icon-x.svg"
         alt="icon x"
       />
       <img
         *ngIf="!game.turn"
         class="turn-icon"
-        src="../../assets/icon-o Blue.svg"
+        src="../../assets/icon-o.svg"
         alt="icon o"
       />
       TURN
@@ -74,12 +74,12 @@
     >
       <div class="title">
         <img
-          src="../../assets/icon-x Red.svg"
+          src="../../assets/icon-x.svg"
           alt="icon x"
           *ngIf="game.modalConfig.winner"
         />
         <img
-          src="../../assets/icon-o Blue.svg"
+          src="../../assets/icon-o.svg"
           alt="icon o"
           *ngIf="game.modalConfig.winner == false"
         />
