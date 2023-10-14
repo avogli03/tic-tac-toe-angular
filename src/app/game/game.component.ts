@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { GameService } from '../game.service';
 import { ConfigService } from '../config.service';
