@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { HostListener, Injectable, inject } from '@angular/core';
 import { ConfigService } from './config.service';
 import { Router } from '@angular/router';
 
@@ -183,6 +183,38 @@ export class GameService {
       this.game.board[randRow][randCol] = 'X';
       this.game.turn = false;
       this.game.count = 1;
+    }
+  }
+
+  resetGame(game: any) {
+    const isConfirmed = window.confirm(
+      'Are you sure you want to reset the game?'
+    );
+
+    if (isConfirmed) {
+      game.modalConfig.modal = 'OFF';
+      game.turn = true;
+      game.count = 0;
+      game.board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', ''],
+      ];
+      this.game.scoreX = 0;
+      this.game.scoreO = 0;
+      this.game.ties = 0;
+
+      if (
+        this.configService.player == 'O' &&
+        this.configService.opponent == 'COM'
+      ) {
+        let randRow = Math.floor(Math.random() * 2);
+        let randCol = Math.floor(Math.random() * 2);
+
+        this.game.board[randRow][randCol] = 'X';
+        this.game.turn = false;
+        this.game.count = 1;
+      }
     }
   }
 
