@@ -218,5 +218,17 @@ export class GameService {
     }
   }
 
-  constructor() {}
+  constructor(private routeer: Router) {
+    this.checkForReload();
+  }
+
+  private checkForReload() {
+    const isReload = sessionStorage.getItem('isReload');
+
+    if (isReload) {
+      this.routeer.navigate(['/']);
+    } else {
+      sessionStorage.setItem('isReload', 'true');
+    }
+  }
 }
