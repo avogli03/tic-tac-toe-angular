@@ -28,7 +28,7 @@ export class GameComponent implements AfterViewInit {
 
   setPlayerNames(): void {
     if (this.configService.opponent == 'COM') {
-      this.titleX = prompt('Enter Player 1 Name') || 'Player 1';
+      this.titleX = prompt('Enter Your Name') || 'Player';
       this.titleO = 'COM';
     } else {
       this.titleX = prompt('Enter Player 1 Name') || 'Player 1';

@@ -223,12 +223,12 @@ export class GameService {
   }
 
   private checkForReload() {
-    const isReload = sessionStorage.getItem('isReload');
+    const isReload = localStorage.getItem('isReload');
 
     if (isReload) {
       this.routeer.navigate(['/']);
     } else {
-      sessionStorage.setItem('isReload', 'true');
+      localStorage.setItem('isReload', 'true');
     }
   }
 }
