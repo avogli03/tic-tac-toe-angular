@@ -160,7 +160,7 @@ export class GameService {
 
   quit(game: any): void {
     this.hideModal(game);
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/']);
   }
 
   nextRound(game: any): void {
@@ -186,7 +186,16 @@ export class GameService {
     }
   }
 
-  resetGame(game: any) {
+  home(game: any): void {
+    const isConfirmed = window.confirm('Are you sure you want to quit?');
+
+    if (isConfirmed) {
+      this.hideModal(game);
+      this.router.navigate(['/']);
+    }
+  }
+
+  resetGame(game: any): void {
     const isConfirmed = window.confirm(
       'Are you sure you want to reset the game?'
     );

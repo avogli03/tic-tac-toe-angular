@@ -6,7 +6,6 @@ import { GameComponent } from './game/game.component';
 const routes: Routes = [
   { path: '', component: MenuComponent },
   { path: 'play', component: GameComponent },
-  { path: 'menu', component: MenuComponent },
 ];
 
 @NgModule({
