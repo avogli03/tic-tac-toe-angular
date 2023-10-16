@@ -1,4 +1,4 @@
-import { HostListener, Injectable, inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ConfigService } from './config.service';
 import { Router } from '@angular/router';
 
@@ -120,8 +120,6 @@ export class GameService {
 
       this.game.board[randRow][randCol] = 'X';
     }
-
-    console.log(this.game);
   }
 
   checkWin(char: 'X' | 'O', tests: number[][][], board: string[][]): boolean {

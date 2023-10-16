@@ -22,7 +22,6 @@ export class ComService {
   }
 
   async play(row: number, col: number, game: any) {
-    console.log(this.player);
     if (game.board[row][col] != '') return;
     if (game.turn && this.player == 'O') return;
     if (!game.turn && this.player == 'X') return;

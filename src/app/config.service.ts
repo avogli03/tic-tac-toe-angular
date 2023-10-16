@@ -1,5 +1,4 @@
 import { Injectable, inject } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +11,6 @@ export class ConfigService {
 
   changePlayer(x: boolean): void {
     this.player = x ? 'X' : 'O';
-    console.log(this.player);
   }
 
   setOpponent(
