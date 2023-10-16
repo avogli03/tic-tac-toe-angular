@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, inject } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  inject,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { GameService } from '../game.service';
 import { ConfigService } from '../config.service';
@@ -26,6 +31,8 @@ export class GameComponent implements AfterViewInit {
       ? inject(ComService)
       : inject(VsService);
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   setPlayerNames(): void {
     if (this.configService.opponent == 'COM') {
       this.titleX = prompt('Enter Your Name') || 'Player';
@@ -34,6 +41,7 @@ export class GameComponent implements AfterViewInit {
       this.titleX = prompt('Enter Player 1 Name') || 'Player 1';
       this.titleO = prompt('Enter Player 2 Name') || 'Player 2';
     }
+    this.cdr.detectChanges();
   }
 
   ngAfterViewInit() {
