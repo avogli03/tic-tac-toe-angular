@@ -36,18 +36,21 @@ export class GameComponent implements AfterViewInit {
   setPlayerNames(): void {
     const Regex = /^[A-Za-z]+$/;
 
+    const capitalizeFirstLetter = (str: string) =>
+      str.charAt(0).toUpperCase() + str.slice(1);
+
     if (this.configService.opponent == 'COM') {
       do {
-        this.titleX = prompt('Enter Your Name')!;
+        this.titleX = capitalizeFirstLetter(prompt('Enter Your Name')!);
       } while (!Regex.test(this.titleX.trim()));
       this.titleO = 'COM';
     } else {
       do {
-        this.titleX = prompt('Enter Player 1 Name')!;
+        this.titleX = capitalizeFirstLetter(prompt('Enter Player 1 Name')!);
       } while (!Regex.test(this.titleX.trim()));
 
       do {
-        this.titleO = prompt('Enter Player 2 Name')!;
+        this.titleO = capitalizeFirstLetter(prompt('Enter Player 2 Name')!);
       } while (!Regex.test(this.titleO.trim()));
     }
     this.cdr.detectChanges();
