@@ -34,12 +34,21 @@ export class GameComponent implements AfterViewInit {
   constructor(private cdr: ChangeDetectorRef) {}
 
   setPlayerNames(): void {
+    const Regex = /^[A-Za-z]+$/;
+
     if (this.configService.opponent == 'COM') {
-      this.titleX = prompt('Enter Your Name') || 'Player';
+      do {
+        this.titleX = prompt('Enter Your Name')!;
+      } while (!Regex.test(this.titleX.trim()));
       this.titleO = 'COM';
     } else {
-      this.titleX = prompt('Enter Player 1 Name') || 'Player 1';
-      this.titleO = prompt('Enter Player 2 Name') || 'Player 2';
+      do {
+        this.titleX = prompt('Enter Player 1 Name')!;
+      } while (!Regex.test(this.titleX.trim()));
+
+      do {
+        this.titleO = prompt('Enter Player 2 Name')!;
+      } while (!Regex.test(this.titleO.trim()));
     }
     this.cdr.detectChanges();
   }
