@@ -39,20 +39,33 @@ export class GameComponent implements AfterViewInit {
     const capitalizeFirstLetter = (str: string) =>
       str.charAt(0).toUpperCase() + str.slice(1);
 
-    if (this.configService.opponent == 'COM') {
-      do {
-        this.titleX = capitalizeFirstLetter(prompt('Enter Your Name')!);
-      } while (!Regex.test(this.titleX.trim()));
-      this.titleO = 'COM';
-    } else {
-      do {
-        this.titleX = capitalizeFirstLetter(prompt('Enter Player 1 Name')!);
-      } while (!Regex.test(this.titleX.trim()));
+    let enteredName: string;
 
+    do {
+      enteredName = capitalizeFirstLetter(prompt('Enter Player 1 Name')!);
+    } while (!Regex.test(enteredName.trim()));
+
+    if (this.configService.opponent == 'COM') {
+      if (this.configService.player == 'X') {
+        this.titleX = enteredName;
+        this.titleO = 'COM';
+      } else {
+        this.titleX = 'COM';
+        this.titleO = enteredName;
+      }
+    } else {
+      this.titleX = enteredName;
+
+      let secondPlayerName: string;
       do {
-        this.titleO = capitalizeFirstLetter(prompt('Enter Player 2 Name')!);
-      } while (!Regex.test(this.titleO.trim()));
+        secondPlayerName = capitalizeFirstLetter(
+          prompt('Enter Player 2 Name')!
+        );
+      } while (!Regex.test(secondPlayerName.trim()));
+
+      this.titleO = secondPlayerName;
     }
+
     this.cdr.detectChanges();
   }
 
