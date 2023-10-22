@@ -42,7 +42,9 @@ export class GameComponent implements AfterViewInit {
     let enteredName: string;
 
     do {
-      enteredName = capitalizeFirstLetter(prompt('Enter Player 1 Name')!);
+      enteredName = capitalizeFirstLetter(
+        prompt('Enter Player 1 Name')! || 'Player 1'
+      );
     } while (!Regex.test(enteredName.trim()));
 
     if (this.configService.opponent == 'COM') {
@@ -59,7 +61,7 @@ export class GameComponent implements AfterViewInit {
       let secondPlayerName: string;
       do {
         secondPlayerName = capitalizeFirstLetter(
-          prompt('Enter Player 2 Name')!
+          prompt('Enter Player 2 Name')! || 'Player 2'
         );
       } while (!Regex.test(secondPlayerName.trim()));
 
