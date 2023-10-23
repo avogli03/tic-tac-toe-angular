@@ -124,13 +124,13 @@
   transition-duration: 0.4s;
 }
 
-/* .icon-x-outline:hover {
-    background-image: url('../../assets/icon-x-outline.svg');
-  }
-  
-  .icon-o-outline:hover {
-    background-image: url('../../assets/icon-o-outline.svg');
-  } */
+.icon-x-outline:hover {
+  background-image: url("../../assets/icon-x-outline.svg");
+}
+
+.icon-o-outline:hover {
+  background-image: url("../../assets/icon-o-outline.svg");
+}
 
 .icon-x {
   background-image: url("../../assets/icon-x.svg");
