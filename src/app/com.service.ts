@@ -22,6 +22,9 @@ export class ComService {
   }
 
   async play(row: number, col: number, game: any) {
+    console.log(
+      `Player ${this.player} made a move at row ${row + 1}, column ${col + 1}`
+    );
     if (game.board[row][col] != '') return;
     if (game.turn && this.player == 'O') return;
     if (!game.turn && this.player == 'X') return;
@@ -53,7 +56,6 @@ export class ComService {
       this.gameService.declareTie(game);
       return;
     }
-
     game.turn = !game.turn;
   }
 
@@ -76,7 +78,15 @@ export class ComService {
     }
 
     let rand: number = Math.floor(Math.random() * available.length);
-    game.board[available[rand][0]][available[rand][1]] = this.com;
+    let selectedMove = available[rand];
+    game.board[selectedMove[0]][selectedMove[1]] = this.com;
+
+    // Update row and col with the computer's move
+    row = selectedMove[0];
+    col = selectedMove[1];
+
+    console.log(`Computer made a move at row ${row + 1}, column ${col + 1}`);
+
     return;
   }
 
@@ -104,8 +114,6 @@ export class ComService {
 
       let sumPlayer: number = valPlayer1 + valPlayer2 + valPlayer3;
 
-      // let case: number;
-
       if (stage == 1 && sumCom == 2 && sumPlayer == 0) {
         let empty: number = valCom1 == 0 ? 1 : valCom2 == 0 ? 2 : 3;
         let row: number = test[empty - 1][0];
@@ -117,7 +125,6 @@ export class ComService {
         let empty: number = valPlayer1 == 0 ? 1 : valPlayer2 == 0 ? 2 : 3;
         let row: number = test[empty - 1][0];
         let col: number = test[empty - 1][1];
-
         game.board[row][col] = this.com;
         return true;
       }
@@ -126,9 +133,5 @@ export class ComService {
     return false;
   }
 
-  constructor() {
-    // let randIntRow = Math.floor(Math.random()*2);
-    // let randIntCol = Math.floor(Math.random()*2);
-    // this.game.board[row][col] = this.configService.player=='O' && this.configService.opponent=='CPU' ? 'X' : '';
-  }
+  constructor() {}
 }

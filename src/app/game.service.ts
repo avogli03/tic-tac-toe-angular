@@ -159,6 +159,7 @@ export class GameService {
   quit(game: any): void {
     this.hideModal(game);
     this.router.navigate(['/']);
+    console.clear();
   }
 
   nextRound(game: any): void {
@@ -182,6 +183,8 @@ export class GameService {
       this.game.turn = false;
       this.game.count = 1;
     }
+    console.clear();
+    console.log('Next Round:');
   }
 
   home(game: any): void {
@@ -190,6 +193,7 @@ export class GameService {
     if (isConfirmed) {
       this.hideModal(game);
       this.router.navigate(['/']);
+      console.clear();
     }
   }
 
@@ -222,6 +226,8 @@ export class GameService {
         this.game.turn = false;
         this.game.count = 1;
       }
+      console.clear();
+      console.log('New Game:');
     }
   }
 
