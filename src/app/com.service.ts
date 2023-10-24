@@ -23,7 +23,9 @@ export class ComService {
 
   async play(row: number, col: number, game: any) {
     console.log(
-      `Player ${this.player} made a move at row ${row + 1}, column ${col + 1}`
+      `Player that chose ${this.player} made a move at row ${row + 1}, column ${
+        col + 1
+      }`
     );
     if (game.board[row][col] != '') return;
     if (game.turn && this.player == 'O') return;
@@ -85,7 +87,7 @@ export class ComService {
     row = selectedMove[0];
     col = selectedMove[1];
 
-    console.log(`Computer made a move at row ${row + 1}, column ${col + 1}`);
+    console.log(`COM made a move at row ${row + 1}, column ${col + 1}`);
 
     return;
   }

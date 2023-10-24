@@ -34,9 +34,9 @@ export class VsService {
       return;
     }
     console.log(
-      `Player ${game.turn ? 'X' : 'O'} made a move at row ${row + 1}, column ${
-        col + 1
-      }`
+      `Player that chose ${game.turn ? 'X' : 'O'} made a move at row ${
+        row + 1
+      }, column ${col + 1}`
     );
     game.turn = !game.turn;
   }
